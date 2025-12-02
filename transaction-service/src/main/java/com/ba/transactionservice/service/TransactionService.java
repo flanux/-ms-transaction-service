@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class transactionservice {
+public class TransactionService {
 
     @Autowired
     private TransactionRepository txRepo;
@@ -38,7 +38,7 @@ public class transactionservice {
 
     public Transaction updateStatus(Long id, Integer status) {
         Transaction t = txRepo.findById(id)
-            .orElse(()-> new RunTimeException("Transaction not found"));
+            .orElseThrow(()-> new RuntimeException("Transaction not found"));
         t.setStatus(status);
         return  txRepo.save(t);
     }

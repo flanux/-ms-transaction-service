@@ -2,7 +2,7 @@ package com.ba.transactionservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.GenerationValue;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 
@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType;
 public class Transaction{
 
     @Id
-    @GeneratedValue(Startegy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;
 
     private Long accountId;
@@ -46,7 +46,7 @@ public class Transaction{
     public Long getTimeStamp() { return timeStamp;}
     public void setTimeStamp(Long timeStamp) {this.timeStamp=timeStamp;}
 
-    public Integet getStatus() {return status;}
+    public Integer getStatus() {return status;}
     public void setStatus(Integer status) {this.status=status;}
 
       @Override

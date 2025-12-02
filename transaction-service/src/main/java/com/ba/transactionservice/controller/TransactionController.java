@@ -33,6 +33,6 @@ public class TransactionController{
 
     @PutMapping("/{id}/status")
     public Transaction updateStatus(@PathVariable Long id, @RequestParam Integer status){
-        return txService.updateStatus(id, value);
+        return txService.updateStatus(id, status);
     }
 };
